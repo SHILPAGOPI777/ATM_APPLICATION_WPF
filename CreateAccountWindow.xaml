@@ -1,0 +1,19 @@
+﻿<Window x:Class="ATM_Application_WPF.CreateAccountWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Create Account" Height="400" Width="400">
+    <Grid Background="LightBlue">
+        <StackPanel Margin="10">
+            <TextBlock Text="Enter Account Holder's Name:"/>
+            <TextBox Name="AccountNameTextBox"/>
+            <TextBlock Text="Enter Account Number (Between 100 to 1000):"/>
+            <TextBox Name="AccountNumberTextBox"/>
+            <TextBlock Text="Enter Annual Interest Rate (less than 3.0%):"/>
+            <TextBox Name="AnnualInterestRateTextBox"/>
+            <TextBlock Text="Enter Initial Balance:"/>
+            <TextBox Name="InitialBalanceTextBox"/>
+            <Button Name="CreateAccountButton" Content="Create Account" Click="CreateAccountButton_Click" Margin="10"/>
+            <TextBlock Name="CreateAccountMessage" Foreground="Red"/>
+        </StackPanel>
+    </Grid>
+</Window>
