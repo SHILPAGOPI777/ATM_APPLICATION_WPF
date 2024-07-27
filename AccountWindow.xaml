@@ -4,13 +4,13 @@
         Title="Account Menu" Height="400" Width="400">
     <Grid Background="LightBlue">
         <StackPanel Margin="20">
-            <TextBlock Name="WelcomeTextBlock" FontSize="40" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <TextBlock Name="WelcomeTextBlock" FontSize="30" HorizontalAlignment="Center" FontWeight="Bold"/>
             <Button Name="CheckBalanceButton" Content="Check Balance" Click="CheckBalanceButton_Click" Margin="10" FontWeight="Bold"/>
             <Button Name="DepositButton" Content="Deposit" Click="DepositButton_Click" Margin="10" FontWeight="Bold"/>
             <Button Name="WithdrawButton" Content="Withdraw" Click="WithdrawButton_Click" Margin="10" FontWeight="Bold"/>
             <Button Name="DisplayTransactionsButton" Content="Display Transactions" Click="DisplayTransactionsButton_Click" Margin="10" FontWeight="Bold"/>
             <Button Name="ExitAccountButton" Content="Exit Account" Click="ExitAccountButton_Click" Margin="10" FontWeight="Bold"/>
-            <TextBlock Name="ActionMessage" Foreground="Green" FontWeight="Bold"/>
+            <TextBlock Name="ActionMessage" Foreground="Green" FontWeight="Bold" HorizontalAlignment="Center" Margin="10"/>
         </StackPanel>
     </Grid>
 </Window>

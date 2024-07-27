@@ -19,13 +19,14 @@ namespace ATM_Application_WPF
     /// </summary>
     public partial class CreateAccountWindow : Window
     {
-        public static Bank bank = new Bank();
-        public CreateAccountWindow()
+        private Bank _bank;
+        public CreateAccountWindow(Bank bank)
         {
             InitializeComponent();
+            _bank = bank;
         }
 
-        private void CreateAccountButton_Click(object sender, RoutedEventArgs e)
+        private async void CreateAccountButton_Click(object sender, RoutedEventArgs e)
         {
             string accountName = AccountNameTextBox.Text;
             if (!int.TryParse(AccountNumberTextBox.Text, out int accountNumber) || accountNumber < 100 || accountNumber > 1000)
@@ -33,7 +34,7 @@ namespace ATM_Application_WPF
                 CreateAccountMessage.Text = "Invalid account number. Please try again.";
                 return;
             }
-            else if (bank.RetrieveAccount(accountNumber) != null)
+            else if (_bank.RetrieveAccount(accountNumber) != null)
             {
                 CreateAccountMessage.Text = "Account number already exists. Please try another.";
                 return;
@@ -52,9 +53,12 @@ namespace ATM_Application_WPF
             }
 
             Account newAccount = new Account(accountNumber, initialBalance, annualInterestRate, accountName);
-            bank.AddAccount(newAccount);
+            _bank.AddAccount(newAccount);
             CreateAccountMessage.Text = "Account created successfully!";
-        }
+            await Task.Delay(3000); // Wait for 3 seconds
 
+            // Close the window after delay
+            this.Close();
+        }
     }
 }

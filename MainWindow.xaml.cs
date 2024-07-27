@@ -25,13 +25,13 @@ namespace ATM_Application_WPF
 
         private void CreateAccountButton_Click(object sender, RoutedEventArgs e)
         {
-            CreateAccountWindow createAccountWindow = new CreateAccountWindow();
+            CreateAccountWindow createAccountWindow = new CreateAccountWindow(bank);
             createAccountWindow.Show();
         }
 
         private void SelectAccountButton_Click(object sender, RoutedEventArgs e)
         {
-            SelectAccountWindow selectAccountWindow = new SelectAccountWindow();
+            SelectAccountWindow selectAccountWindow = new SelectAccountWindow(bank);
             selectAccountWindow.Show();
         }
 
@@ -102,6 +102,7 @@ namespace ATM_Application_WPF
         {
             if (accountCount < MaxAccounts)
             {
+                
                 accounts[accountCount++] = newAccount;
             }
             else

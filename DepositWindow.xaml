@@ -7,7 +7,7 @@
             <TextBlock Text="Enter amount to deposit:" FontWeight="Bold"/>
             <TextBox Name="AmountTextBox"/>
             <Button Name="DepositButton" Content="Deposit" Click="DepositButton_Click" Margin="10" FontWeight="Bold"/>
-            <TextBlock Name="DepositMessage" Foreground="Green" FontWeight="Bold"/> 
+            <TextBlock Name="DepositMessage" Foreground="Green" FontWeight="Bold" HorizontalAlignment="Center" Margin="10"/> 
         </StackPanel>
     </Grid>
 </Window>

@@ -19,17 +19,18 @@ namespace ATM_Application_WPF
     /// </summary>
     public partial class SelectAccountWindow : Window
     {
-        public static Bank bank = new Bank();
-        public SelectAccountWindow()
+        private Bank _bank;
+        public SelectAccountWindow(Bank bank)
         {
             InitializeComponent();
+            _bank = bank;
         }
 
         private void SelectAccountButton_Click(object sender, RoutedEventArgs e)
         {
             if (int.TryParse(AccountNumberTextBox.Text, out int accountNumber))
             {
-                Account selectedAccount = bank.RetrieveAccount(accountNumber);
+                Account selectedAccount = _bank.RetrieveAccount(accountNumber);
                 if (selectedAccount != null)
                 {
                     AccountWindow accountWindow = new AccountWindow(selectedAccount);
