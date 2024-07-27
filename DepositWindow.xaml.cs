@@ -14,10 +14,8 @@ using System.Windows.Shapes;
 
 namespace ATM_Application_WPF
 {
-    /// <summary>
-    /// Interaction logic for DepositWindow.xaml
-    /// </summary>
-    public partial class DepositWindow : Window
+   
+    public partial class DepositWindow : Window //Despoti window actions
     {
         private Account account;
 
@@ -31,13 +29,13 @@ namespace ATM_Application_WPF
         {
             if (double.TryParse(AmountTextBox.Text, out double amount))
             {
-                account.InitialBalance += amount;
+                account.InitialBalance += amount; //Display amount
                 account.AddTransaction($"Deposited: {amount}");
                 DepositMessage.Text = "Deposit successful!";
             }
             else
             {
-                DepositMessage.Text = "Invalid amount. Please try again.";
+                DepositMessage.Text = "Invalid amount. Please try again."; //Validation  message
             }
         }
     }

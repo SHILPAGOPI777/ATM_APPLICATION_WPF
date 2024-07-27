@@ -14,9 +14,7 @@ using System.Windows.Shapes;
 
 namespace ATM_Application_WPF
 {
-    /// <summary>
-    /// Interaction logic for WithdrawWindow.xaml
-    /// </summary>
+   
     public partial class WithdrawWindow : Window
     {
         private Account account;
@@ -27,7 +25,7 @@ namespace ATM_Application_WPF
             account = selectedAccount;
         }
 
-        private void WithdrawButton_Click(object sender, RoutedEventArgs e)
+        private void WithdrawButton_Click(object sender, RoutedEventArgs e) //Withdraw amount action
         {
             if (double.TryParse(AmountTextBox.Text, out double amount))
             {

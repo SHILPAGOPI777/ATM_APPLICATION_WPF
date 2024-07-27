@@ -14,10 +14,8 @@ using System.Windows.Shapes;
 
 namespace ATM_Application_WPF
 {
-    /// <summary>
-    /// Interaction logic for CreateAccountWindow.xaml
-    /// </summary>
-    public partial class CreateAccountWindow : Window
+    
+    public partial class CreateAccountWindow : Window //Create account window
     {
         private Bank _bank;
         public CreateAccountWindow(Bank bank)
@@ -29,12 +27,12 @@ namespace ATM_Application_WPF
         private async void CreateAccountButton_Click(object sender, RoutedEventArgs e)
         {
             string accountName = AccountNameTextBox.Text;
-            if (!int.TryParse(AccountNumberTextBox.Text, out int accountNumber) || accountNumber < 100 || accountNumber > 1000)
+            if (!int.TryParse(AccountNumberTextBox.Text, out int accountNumber) || accountNumber < 100 || accountNumber > 1000) //accept account number from 100-1000
             {
-                CreateAccountMessage.Text = "Invalid account number. Please try again.";
+                CreateAccountMessage.Text = "Invalid account number. Please try again."; 
                 return;
             }
-            else if (_bank.RetrieveAccount(accountNumber) != null)
+            else if (_bank.RetrieveAccount(accountNumber) != null)//Check account number
             {
                 CreateAccountMessage.Text = "Account number already exists. Please try another.";
                 return;

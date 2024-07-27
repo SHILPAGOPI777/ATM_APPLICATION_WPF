@@ -14,9 +14,7 @@ using System.Windows.Shapes;
 
 namespace ATM_Application_WPF
 {
-    /// <summary>
-    /// Interaction logic for AccountWindow.xaml
-    /// </summary>
+   
     public partial class AccountWindow : Window
     {
         private Account account;

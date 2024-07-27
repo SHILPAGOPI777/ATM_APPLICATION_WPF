@@ -14,10 +14,8 @@ using System.Windows.Shapes;
 
 namespace ATM_Application_WPF
 {
-    /// <summary>
-    /// Interaction logic for TransactionsWindow.xaml
-    /// </summary>
-    public partial class TransactionsWindow : Window
+    
+    public partial class TransactionsWindow : Window // View transaction Window & Actions
     {
         public TransactionsWindow(Account account)
         {
@@ -30,7 +28,7 @@ namespace ATM_Application_WPF
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            Close(); //Close Window
         }
     }
 

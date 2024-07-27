@@ -11,9 +11,7 @@ using System.Windows.Shapes;
 
 namespace ATM_Application_WPF
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+   
     public partial class MainWindow : Window
     {
         public static Bank bank = new Bank();
@@ -25,7 +23,7 @@ namespace ATM_Application_WPF
 
         private void CreateAccountButton_Click(object sender, RoutedEventArgs e)
         {
-            CreateAccountWindow createAccountWindow = new CreateAccountWindow(bank);
+            CreateAccountWindow createAccountWindow = new CreateAccountWindow(bank); //Main window containing create account and select account
             createAccountWindow.Show();
         }
 
@@ -58,13 +56,13 @@ namespace ATM_Application_WPF
             AnnualInterestRate = annualInterestRate;
             InitialBalance = initialBalance;
             Transactions = new string[MaxTransactions];
-            Transactions[0] = $"Account created with initial balance: {initialBalance}"; // Creating array of transactions
+            Transactions[0] = $"Account created with initial balance: {initialBalance}"; // Creating array of transactions for account
             TransactionCount = 1;
         }
 
         public void AddTransaction(string transaction)
         {
-            if (TransactionCount <= MaxTransactions) // Checking transactions reached maximum limit
+            if (TransactionCount <= MaxTransactions) // Checking transactions reached maximum limit or not
             {
                 Transactions[TransactionCount] = transaction;
                 TransactionCount++;

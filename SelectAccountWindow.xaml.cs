@@ -14,10 +14,8 @@ using System.Windows.Shapes;
 
 namespace ATM_Application_WPF
 {
-    /// <summary>
-    /// Interaction logic for SelectAccountWindow.xaml
-    /// </summary>
-    public partial class SelectAccountWindow : Window
+    
+    public partial class SelectAccountWindow : Window //To select Account details
     {
         private Bank _bank;
         public SelectAccountWindow(Bank bank)
@@ -30,7 +28,7 @@ namespace ATM_Application_WPF
         {
             if (int.TryParse(AccountNumberTextBox.Text, out int accountNumber))
             {
-                Account selectedAccount = _bank.RetrieveAccount(accountNumber);
+                Account selectedAccount = _bank.RetrieveAccount(accountNumber); //Display selected account
                 if (selectedAccount != null)
                 {
                     AccountWindow accountWindow = new AccountWindow(selectedAccount);
@@ -44,7 +42,7 @@ namespace ATM_Application_WPF
             }
             else
             {
-                SelectAccountMessage.Text = "Invalid account number.";
+                SelectAccountMessage.Text = "Invalid account number."; // Check for invalid account numbers
             }
         }
     }
