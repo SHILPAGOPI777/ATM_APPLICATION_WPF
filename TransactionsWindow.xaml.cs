@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace ATM_Application_WPF
 {
     
-    public partial class TransactionsWindow : Window // View transaction Window & Actions
+    public partial class TransactionsWindow : Window // View transaction Window & Actions.
     {
         public TransactionsWindow(Account account)
         {
